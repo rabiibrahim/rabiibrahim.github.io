@@ -1,0 +1,8 @@
+{
+  "name": "Rabi Ibrahim - Senior Staff Engineer & Content Creator",
+  "description": "Professional portfolio of Rabi Ibrahim, a Senior Staff Engineer specialized in distributed systems and the creator of RabiBytes.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

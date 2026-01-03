@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.glass-nav {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.dark .glass-nav {
+    background: rgba(15, 23, 42, 0.8);
+}
+
+.experience-dot {
+    position: absolute;
+    left: -9px;
+    width: 18px;
+    height: 18px;
+    border-radius: 9999px;
+    background: #2563eb;
+    border: 4px solid white;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.dark .experience-dot {
+    border-color: #0f172a;
+    background: #3b82f6;
+}
+
+section {
+    scroll-margin-top: 5rem;
+}
+
+/* Base Animations */
+@keyframes slideUpFade {
+    from { 
+        opacity: 0; 
+        transform: translateY(30px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.animate-slide-up {
+    animation: slideUpFade 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+}
+
+/* Bounce In Animation for Skills */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 0.9;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.skill-card-hidden {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.animate-bounce-in {
+    animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+/* Subtle accent for the timeline cards */
+.experience-card-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #2563eb;
+    border-radius: 4px 0 0 4px;
+}
