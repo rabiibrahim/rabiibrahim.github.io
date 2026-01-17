@@ -1,0 +1,91 @@
+
+@layer utilities {
+    .animation-delay-2000 {
+        animation-delay: 2s;
+    }
+    .animation-delay-4000 {
+        animation-delay: 4s;
+    }
+}
+
+/* Custom Scrollbar for Dark Mode */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00bfff;
+}
+
+/* Skill Card Style */
+.skill-card {
+    @apply bg-slate-950 border border-slate-800 p-4 rounded flex flex-col items-center justify-center text-center transition-all duration-300;
+}
+.skill-card:hover {
+    @apply border-cyan-400/50 -translate-y-1 shadow-lg shadow-cyan-900/20;
+}
+
+/* Scroll Reveal Classes */
+.reveal-up, .reveal-left, .reveal-right {
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal-up {
+    transform: translateY(30px);
+}
+
+.reveal-left {
+    transform: translateX(-30px);
+}
+
+.reveal-right {
+    transform: translateX(30px);
+}
+
+.reveal-active {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* Blob Animation for Hero */
+@keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob {
+    animation: blob 7s infinite;
+}
+
+/* Navbar Blur on Scroll */
+.nav-scrolled {
+    @apply bg-slate-950/90 backdrop-blur-md border-slate-800 shadow-lg;
+}
+
+/* RTL Specific Overrides */
+[dir="rtl"] {
+    font-family: 'Cairo', sans-serif;
+}
+
+/* Flip Reveal Animations in RTL */
+[dir="rtl"] .reveal-left {
+    transform: translateX(30px);
+}
+[dir="rtl"] .reveal-right {
+    transform: translateX(-30px);
+}
+[dir="rtl"] .reveal-active {
+    transform: translate(0, 0);
+}

@@ -1,0 +1,416 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rabi Ibrahim | Senior Staff Engineer & RabiBytes</title>
+    <meta name="description" content="Portfolio of Rabi Ibrahim, Senior Staff Engineer (Kinaxis, ex-Amazon) and creator of RabiBytes. Bridging academic theory and real-world systems.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                        arabic: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#151f32',
+                            900: '#0f172a',
+                            950: '#020617',
+                        },
+                        cyan: {
+                            450: '#00bfff',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS Link -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="bg-slate-950 text-slate-300 font-sans antialiased selection:bg-cyan-500 selection:text-white overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 top-0 border-b border-transparent">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold font-mono text-cyan-400 tracking-tighter" data-i18n="nav_name">
+                Rabi Ibrahim
+            </a>
+            
+            <div class="flex items-center gap-6">
+                 <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 rtl:space-x-reverse items-center font-medium text-sm">
+                    <a href="#experience" class="hover:text-cyan-400 transition-colors" data-i18n="nav_exp">Experience</a>
+                    <a href="#rabibytes" class="hover:text-cyan-400 transition-colors" data-i18n="nav_creator">Creator</a>
+                    <a href="#skills" class="hover:text-cyan-400 transition-colors" data-i18n="nav_skills">Skills</a>
+                    <a href="#education" class="hover:text-cyan-400 transition-colors" data-i18n="nav_edu">Education</a>
+                    <a href="#contact" class="px-4 py-2 border border-cyan-400 text-cyan-400 rounded hover:bg-cyan-400 hover:text-slate-950 transition-all" data-i18n="nav_contact">Contact</a>
+                </div>
+
+                <!-- Language Toggle -->
+                <button id="lang-toggle" class="px-3 py-1 rounded border border-slate-700 hover:border-cyan-400 text-xs font-mono text-cyan-400 transition-colors">
+                    AR
+                </button>
+
+                <!-- Mobile Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none text-slate-100">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-slate-950/95 backdrop-blur-lg transform translate-x-full rtl:-translate-x-full transition-transform duration-300 flex flex-col justify-center items-center space-y-8 text-xl z-40 md:hidden">
+            <button id="close-menu-btn" class="absolute top-6 right-6 rtl:right-auto rtl:left-6 text-3xl text-slate-400 hover:text-white">
+                <i class="fas fa-times"></i>
+            </button>
+            <a href="#experience" class="mobile-link hover:text-cyan-400" data-i18n="mob_exp">Experience</a>
+            <a href="#rabibytes" class="mobile-link hover:text-cyan-400" data-i18n="mob_creator">Creator Hub</a>
+            <a href="#skills" class="mobile-link hover:text-cyan-400" data-i18n="mob_skills">Skills</a>
+            <a href="#education" class="mobile-link hover:text-cyan-400" data-i18n="mob_edu">Education</a>
+            <a href="#contact" class="mobile-link text-cyan-400 font-bold" data-i18n="mob_contact">Get In Touch</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center pt-20 relative overflow-hidden">
+        <!-- Background Decor -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-indigo-600 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+            <div class="absolute top-20 right-10 w-72 h-72 bg-cyan-600 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+            <div class="absolute -bottom-8 left-20 w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col-reverse lg:flex-row items-center gap-12">
+                <div class="lg:w-2/3 reveal-left rtl:reveal-right">
+                    <p class="font-mono text-cyan-400 mb-4" data-i18n="hero_hello">Hello, I am</p>
+                    <h1 class="text-5xl lg:text-7xl font-bold text-slate-100 mb-6 leading-tight">
+                        <span data-i18n="hero_name">Rabi Ibrahim.</span>
+                        <span class="block text-slate-400 text-3xl lg:text-5xl mt-2" data-i18n="hero_title">Senior Staff Engineer.</span>
+                    </h1>
+                    <p class="text-lg text-slate-400 mb-8 max-w-2xl leading-relaxed" data-i18n="hero_desc">
+                        I bridge the gap between <span class="text-indigo-400 font-semibold">academic theory</span> and <span class="text-cyan-400 font-semibold">real-world high-scale production systems</span>. Currently driving Backend R&D at Kinaxis. Formerly Amazon.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://linkedin.com/in/rabiibrahim" target="_blank" class="px-8 py-3 bg-cyan-500 text-slate-950 font-bold rounded hover:bg-cyan-400 transition-all flex items-center gap-2">
+                            <i class="fab fa-linkedin"></i> <span data-i18n="hero_linkedin">LinkedIn</span>
+                        </a>
+                        <a href="https://www.youtube.com/@RabiBytes" target="_blank" class="px-8 py-3 border border-slate-600 text-slate-100 rounded hover:border-red-500 hover:text-red-500 transition-all flex items-center gap-2 group">
+                            <i class="fab fa-youtube text-red-500 group-hover:text-red-500"></i> RabiBytes
+                        </a>
+                        <a href="https://github.com/rabiibrahim" target="_blank" class="px-6 py-3 text-slate-400 hover:text-white transition-colors">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Abstract Code Visual -->
+                <div class="lg:w-1/3 flex justify-center reveal-right rtl:reveal-left">
+                    <div class="relative bg-slate-900 border border-slate-800 p-6 rounded-lg shadow-2xl font-mono text-sm leading-6 text-slate-400 w-full max-w-md rotate-3 hover:rotate-0 transition-transform duration-500" dir="ltr">
+                        <div class="flex gap-2 mb-4">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <div>
+                            <span class="text-purple-400">class</span> <span class="text-yellow-300">Engineer</span> {<br>
+                            &nbsp;&nbsp;<span class="text-purple-400">constructor</span>() {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-red-400">this</span>.role = <span class="text-green-400">"Senior Staff"</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-red-400">this</span>.mission = <span class="text-green-400">"Scale"</span>;<br>
+                            &nbsp;&nbsp;}<br><br>
+                            &nbsp;&nbsp;<span class="text-blue-400">solve</span>(<span class="text-orange-300">complexProblem</span>) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">return</span> <span class="text-blue-400">simplify</span>(complexProblem);<br>
+                            &nbsp;&nbsp;}<br>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-24 bg-slate-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-slate-100 mb-12 flex items-center gap-3 reveal-up">
+                <span class="text-cyan-400">01.</span> <span data-i18n="section_exp_title">Professional Experience</span>
+                <span class="block h-px bg-slate-700 flex-grow ms-4"></span>
+            </h2>
+
+            <div class="relative border-s-2 border-slate-700 ms-4 md:ms-6 space-y-12">
+                
+                <!-- Kinaxis -->
+                <div class="relative ps-8 md:ps-12 reveal-up group">
+                    <div class="absolute -start-[9px] top-0 w-4 h-4 rounded-full bg-slate-900 border-2 border-cyan-400 group-hover:bg-cyan-400 transition-colors"></div>
+                    <div class="mb-2">
+                        <h3 class="text-xl md:text-2xl font-bold text-slate-100" data-i18n="role_kinaxis">Senior Staff Engineer</h3>
+                        <div class="flex flex-col md:flex-row md:items-center text-slate-400 font-mono text-sm mt-1">
+                            <span class="text-cyan-400">Kinaxis</span>
+                            <span class="hidden md:inline mx-2">•</span>
+                            <span class="ltr-only">June 2024 - Present</span>
+                        </div>
+                    </div>
+                    <ul class="list-disc list-outside ms-4 space-y-2 text-slate-400 marker:text-cyan-400">
+                        <li data-i18n="desc_kinaxis_1">Lead backend R&D architecture for scalable, cloud-native microservices.</li>
+                        <li data-i18n="desc_kinaxis_2">Designed migration strategy for legacy monolith to containerized microservices using Kubernetes, Docker, Go, and C++.</li>
+                        <li data-i18n="desc_kinaxis_3">Designed an optimizer framework achieving a <span class="text-white">13% reduction</span> in query execution time.</li>
+                        <li data-i18n="desc_kinaxis_4">Mentored junior developers, improving team productivity by 20%.</li>
+                    </ul>
+                </div>
+
+                <!-- Amazon -->
+                <div class="relative ps-8 md:ps-12 reveal-up group">
+                    <div class="absolute -start-[9px] top-0 w-4 h-4 rounded-full bg-slate-900 border-2 border-indigo-400 group-hover:bg-indigo-400 transition-colors"></div>
+                    <div class="mb-2">
+                        <h3 class="text-xl md:text-2xl font-bold text-slate-100" data-i18n="role_amazon">Software Development Engineer</h3>
+                        <div class="flex flex-col md:flex-row md:items-center text-slate-400 font-mono text-sm mt-1">
+                            <span class="text-indigo-400">Amazon</span>
+                            <span class="hidden md:inline mx-2">•</span>
+                            <span class="ltr-only">Aug 2016 - June 2024</span>
+                        </div>
+                    </div>
+                    <p class="text-sm italic text-slate-500 mb-2" data-i18n="focus_amazon">Focus: Payment Information Security</p>
+                    <ul class="list-disc list-outside ms-4 space-y-2 text-slate-400 marker:text-indigo-400">
+                        <li data-i18n="desc_amazon_1">Designed and delivered large-scale distributed systems focusing on payments and security solutions.</li>
+                        <li data-i18n="desc_amazon_2">Employed microservices architecture on AWS (Java, Python, Kotlin).</li>
+                        <li data-i18n="desc_amazon_3">Ensured compliance with Amazon Payments' information security framework.</li>
+                        <li data-i18n="desc_amazon_4">Played a pivotal role in influencing technical decisions and driving innovation.</li>
+                    </ul>
+                </div>
+
+                <!-- Blulogix -->
+                <div class="relative ps-8 md:ps-12 reveal-up group">
+                    <div class="absolute -start-[9px] top-0 w-4 h-4 rounded-full bg-slate-900 border-2 border-slate-500 group-hover:bg-slate-500 transition-colors"></div>
+                    <div class="mb-2">
+                        <h3 class="text-xl md:text-2xl font-bold text-slate-100" data-i18n="role_blulogix">Software Engineer</h3>
+                        <div class="flex flex-col md:flex-row md:items-center text-slate-400 font-mono text-sm mt-1">
+                            <span class="text-slate-300">Blulogix</span>
+                            <span class="hidden md:inline mx-2">•</span>
+                            <span class="ltr-only">June 2014 - July 2016</span>
+                        </div>
+                    </div>
+                    <ul class="list-disc list-outside ms-4 space-y-2 text-slate-400 marker:text-slate-500">
+                        <li data-i18n="desc_blulogix_1">Developed a SaaS billing platform for telecom providers using Java, Spring, Hibernate, and Solr.</li>
+                        <li data-i18n="desc_blulogix_2">Contributed to the Minimum Viable Product (MVP) and facilitated seamless integration.</li>
+                        <li data-i18n="desc_blulogix_3">Demonstrated technical leadership in resolving ambiguous issues in a fast-paced startup environment.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- RabiBytes Creator Section -->
+    <section id="rabibytes" class="py-24 bg-gradient-to-b from-slate-950 to-slate-900 border-y border-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 reveal-left rtl:reveal-right">
+                    <div class="inline-block px-3 py-1 rounded-full bg-red-500/10 text-red-500 text-sm font-mono mb-4 border border-red-500/20">
+                        <i class="fab fa-youtube me-2"></i><span data-i18n="mission_tag">Content Creation</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-100 mb-6" data-i18n="mission_title">
+                        The <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">RabiBytes</span> Mission
+                    </h2>
+                    <p class="text-slate-400 text-lg leading-relaxed mb-6" data-i18n="mission_desc_1">
+                        I dedicate 20% of my time to being a content creator. My goal is to empower the tech community, specifically within the Arabic region, by simplifying complex engineering concepts.
+                    </p>
+                    <p class="text-slate-400 mb-8" data-i18n="mission_desc_2">
+                        Through my blog and YouTube channel, I share insights on system design, distributed architectures, and career growth in big tech.
+                    </p>
+                    
+                    <div class="flex gap-4">
+                        <a href="https://www.youtube.com/@RabiBytes" target="_blank" class="px-6 py-3 bg-red-600 text-white font-bold rounded hover:bg-red-700 transition-colors shadow-lg shadow-red-900/20" data-i18n="btn_channel">
+                            Visit Channel
+                        </a>
+                        <a href="https://rabibytes.github.io/" target="_blank" class="px-6 py-3 border border-slate-700 text-slate-300 font-bold rounded hover:bg-slate-800 transition-colors" data-i18n="btn_blog">
+                            Read Blog
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 reveal-right rtl:reveal-left">
+                    <!-- Stylized Video Placeholder -->
+                    <a href="https://www.youtube.com/@RabiBytes" target="_blank" class="block group relative w-full aspect-video bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-red-500/50 transition-all shadow-2xl">
+                        <div class="absolute inset-0 bg-slate-900 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                             <!-- Abstract Thumbnail Art -->
+                             <i class="fas fa-network-wired text-9xl text-slate-800 absolute opacity-50"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                            <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center ps-1 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-play text-white text-2xl"></i>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/90 to-transparent">
+                            <h3 class="text-white font-bold text-xl" data-i18n="video_title">System Design & Architecture</h3>
+                            <p class="text-slate-300 text-sm">@RabiBytes</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-slate-100 mb-12 flex items-center gap-3 reveal-up">
+                <span class="text-cyan-400">02.</span> <span data-i18n="skills_title">Technical Arsenal</span>
+                <span class="block h-px bg-slate-700 flex-grow ms-4"></span>
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Backend & Cloud (80%) -->
+                <div class="reveal-up">
+                    <h3 class="text-xl font-bold text-indigo-400 mb-6 flex items-center gap-2" data-i18n="skills_backend">
+                        <i class="fas fa-server"></i> Backend & Cloud (Core Focus)
+                    </h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="skill-card">
+                            <i class="fab fa-java text-orange-500 mb-2 text-2xl"></i>
+                            <span class="font-mono">Java / Kotlin</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fab fa-aws text-yellow-500 mb-2 text-2xl"></i>
+                            <span class="font-mono">AWS</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fab fa-golang text-cyan-500 mb-2 text-2xl"></i>
+                            <span class="font-mono">Go / C++</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-database text-blue-400 mb-2 text-2xl"></i>
+                            <span class="font-mono">SQL / NoSQL</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fab fa-python text-blue-300 mb-2 text-2xl"></i>
+                            <span class="font-mono">Python</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-microchip text-purple-400 mb-2 text-2xl"></i>
+                            <span class="font-mono">Microservices</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Frontend (20%) -->
+                <div class="reveal-up">
+                    <h3 class="text-xl font-bold text-cyan-400 mb-6 flex items-center gap-2" data-i18n="skills_tools">
+                        <i class="fas fa-tools"></i> Tools & Frontend
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="bg-slate-900 p-4 rounded border border-slate-800 flex items-center justify-between">
+                            <span class="font-mono text-slate-300">CI/CD (Jenkins, GitLab)</span>
+                            <div class="w-32 h-2 bg-slate-700 rounded-full overflow-hidden">
+                                <div class="bg-cyan-500 h-full w-[90%]"></div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-900 p-4 rounded border border-slate-800 flex items-center justify-between">
+                            <span class="font-mono text-slate-300">Docker / Containers</span>
+                            <div class="w-32 h-2 bg-slate-700 rounded-full overflow-hidden">
+                                <div class="bg-cyan-500 h-full w-[85%]"></div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-900 p-4 rounded border border-slate-800 flex items-center justify-between">
+                            <span class="font-mono text-slate-300">React / NodeJs</span>
+                            <div class="w-32 h-2 bg-slate-700 rounded-full overflow-hidden">
+                                <div class="bg-indigo-500 h-full w-[60%]"></div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-900 p-4 rounded border border-slate-800 flex items-center justify-between">
+                            <span class="font-mono text-slate-300">Git / Jira</span>
+                            <div class="w-32 h-2 bg-slate-700 rounded-full overflow-hidden">
+                                <div class="bg-cyan-500 h-full w-[95%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certs -->
+    <section id="education" class="py-24 bg-slate-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-slate-100 mb-12 flex items-center gap-3 reveal-up">
+                <span class="text-cyan-400">03.</span> <span data-i18n="edu_title">Education & Certifications</span>
+                <span class="block h-px bg-slate-700 flex-grow ms-4"></span>
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Degree -->
+                <div class="col-span-1 md:col-span-3 bg-slate-800/50 p-6 rounded-lg border border-slate-700 reveal-up">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white" data-i18n="edu_degree">Bachelor of Software Engineering</h3>
+                            <p class="text-cyan-400 mt-1" data-i18n="edu_uni">The Hashemite University</p>
+                        </div>
+                        <span class="text-slate-500 font-mono text-sm ltr-only">2010 - 2014</span>
+                    </div>
+                </div>
+
+                <!-- Certs -->
+                <div class="bg-slate-950 p-6 rounded-lg border border-slate-800 hover:border-cyan-400/50 transition-colors reveal-up">
+                    <i class="fas fa-shield-halved text-cyan-400 text-3xl mb-4"></i>
+                    <h4 class="font-bold text-slate-200" data-i18n="cert_hacker">Certified Ethical Hacker v9</h4>
+                    <p class="text-sm text-slate-500 mt-2 ltr-only">Jan 2018</p>
+                </div>
+
+                <div class="bg-slate-950 p-6 rounded-lg border border-slate-800 hover:border-cyan-400/50 transition-colors reveal-up">
+                    <i class="fas fa-cubes text-cyan-400 text-3xl mb-4"></i>
+                    <h4 class="font-bold text-slate-200" data-i18n="cert_blockchain">BlockChain Dev Bootcamp</h4>
+                    <p class="text-sm text-slate-500 mt-2 ltr-only">Aug 2018</p>
+                </div>
+
+                <div class="bg-slate-950 p-6 rounded-lg border border-slate-800 hover:border-cyan-400/50 transition-colors reveal-up">
+                    <i class="fas fa-lock text-cyan-400 text-3xl mb-4"></i>
+                    <h4 class="font-bold text-slate-200" data-i18n="cert_security">Security Certifier</h4>
+                    <p class="text-sm text-slate-500 mt-2 ltr-only">Amazon Internal</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="py-12 bg-slate-950 border-t border-slate-900 text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl font-bold text-white mb-6" data-i18n="footer_title">Let's Connect</h2>
+            <p class="text-slate-400 max-w-lg mx-auto mb-8" data-i18n="footer_desc">
+                Whether you have a question about backend scaling, want to collaborate on a video, or just want to say hi.
+            </p>
+            
+            <div class="flex justify-center gap-8 mb-8">
+                <a href="https://github.com/rabiibrahim" class="text-slate-400 hover:text-cyan-400 transition-colors text-2xl"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/rabiibrahim" class="text-slate-400 hover:text-cyan-400 transition-colors text-2xl"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.youtube.com/@RabiBytes" class="text-slate-400 hover:text-red-500 transition-colors text-2xl"><i class="fab fa-youtube"></i></a>
+                <a href="mailto:eng.rabiibrahim@gmail.com" class="text-slate-400 hover:text-cyan-400 transition-colors text-2xl"><i class="fas fa-envelope"></i></a>
+            </div>
+            
+            <p class="text-slate-600 text-sm font-mono" data-i18n="footer_copy">
+                &copy; <span id="year"></span> Rabi Ibrahim. Built with <span class="text-cyan-400">Tailwind</span> & <span class="text-cyan-400">Code</span>.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JS Link -->
+    <script src="index.js"></script>
+</body>
+</html>
