@@ -8,6 +8,12 @@
     }
 }
 
+/* Global Scroll Offset for Fixed Header */
+html {
+    scroll-padding-top: 100px;
+    scroll-behavior: smooth;
+}
+
 /* Custom Scrollbar for Dark Mode */
 ::-webkit-scrollbar {
     width: 10px;
@@ -74,18 +80,15 @@
     @apply bg-slate-950/90 backdrop-blur-md border-slate-800 shadow-lg;
 }
 
-/* RTL Specific Overrides */
-[dir="rtl"] {
-    font-family: 'Cairo', sans-serif;
+/* Back to Top Button */
+#back-to-top {
+    @apply fixed bottom-8 right-8 z-50 w-12 h-12 flex items-center justify-center bg-cyan-500 text-slate-950 rounded-full shadow-lg shadow-cyan-500/20 opacity-0 invisible translate-y-4 transition-all duration-300;
 }
 
-/* Flip Reveal Animations in RTL */
-[dir="rtl"] .reveal-left {
-    transform: translateX(30px);
+#back-to-top.show {
+    @apply opacity-100 visible translate-y-0;
 }
-[dir="rtl"] .reveal-right {
-    transform: translateX(-30px);
-}
-[dir="rtl"] .reveal-active {
-    transform: translate(0, 0);
+
+#back-to-top.show:hover {
+    @apply bg-cyan-400 -translate-y-1;
 }
