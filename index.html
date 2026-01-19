@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rabi Ibrahim | Senior Staff Engineer & RabiBytes</title>
-    <meta name="description" content="Portfolio of Rabi Ibrahim, Senior Staff Engineer (Kinaxis, ex-Amazon) and creator of RabiBytes. Bridging academic theory and real-world systems.">
+    <meta name="description" content="Portfolio of Rabi Ibrahim, Senior Staff Engineer (Kinaxis, ex-Amazon) and creator of RabiBytes. Bridging academic theory and real-world distributed systems.">
+    <meta name="keywords" content="Rabi Ibrahim, Senior Staff Engineer, Software Engineer, Backend, Distributed Systems, System Design, Kinaxis, Amazon, AWS, Microservices, RabiBytes, Tech Education">
+    <meta name="author" content="Rabi Ibrahim">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rabiibrahim.dev/">
+    <meta property="og:title" content="Rabi Ibrahim | Senior Staff Engineer & RabiBytes">
+    <meta property="og:description" content="Bridging the gap between academic theory and real-world high-scale production systems. Senior Staff Engineer & Content Creator.">
+    <meta property="og:image" content="https://img.youtube.com/vi/AtwFyrwOtwM/maxresdefault.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://rabiibrahim.dev/">
+    <meta property="twitter:title" content="Rabi Ibrahim | Senior Staff Engineer & RabiBytes">
+    <meta property="twitter:description" content="Bridging the gap between academic theory and real-world high-scale production systems. Senior Staff Engineer & Content Creator.">
+    <meta property="twitter:image" content="https://img.youtube.com/vi/AtwFyrwOtwM/maxresdefault.jpg">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -53,8 +70,31 @@
     <!-- Navigation -->
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 top-0 border-b border-transparent">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#hero" class="text-2xl font-bold font-mono text-cyan-400 tracking-tighter">
-                Rabi Ibrahim
+            
+            <!-- Logo & Brand -->
+            <a href="#hero" class="flex items-center gap-3 group" aria-label="Rabi Ibrahim Home">
+                <!-- Custom Logo Icon -->
+                <div class="relative flex items-center justify-center w-11 h-11 bg-slate-900/50 rounded-xl border border-slate-800 shadow-xl group-hover:border-cyan-500/30 group-hover:bg-slate-900 transition-all duration-300 overflow-hidden">
+                    <!-- Background Glow -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    <svg class="w-6 h-6 relative z-10 transform group-hover:scale-110 transition-transform duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <!-- Left Bracket (Dev) -->
+                        <path d="M6 7L2 12L6 17" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        
+                        <!-- Right Bracket (Dev) -->
+                        <path d="M18 7L22 12L18 17" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        
+                        <!-- Play Button (Content) - Centered -->
+                        <path d="M10 8.5L15 12L10 15.5V8.5Z" fill="#ef4444" stroke="#ef4444" stroke-width="1.5" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+                <!-- Text Logo -->
+                <div class="flex flex-col">
+                    <span class="text-xl font-bold font-mono text-slate-100 tracking-tighter leading-none group-hover:text-cyan-400 transition-colors">Rabi Ibrahim</span>
+                    <span class="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-semibold mt-1 group-hover:text-slate-400 transition-colors">Dev &bull; Creator</span>
+                </div>
             </a>
             
             <!-- Desktop Menu -->
@@ -67,14 +107,14 @@
             </div>
 
             <!-- Mobile Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none text-slate-100">
+            <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none text-slate-100" aria-label="Open Menu">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
 
         <!-- Mobile Menu Overlay -->
         <div id="mobile-menu" class="fixed inset-0 bg-slate-950/95 backdrop-blur-lg transform translate-x-full transition-transform duration-300 flex flex-col justify-center items-center space-y-8 text-xl z-40 md:hidden">
-            <button id="close-menu-btn" class="absolute top-6 right-6 text-3xl text-slate-400 hover:text-white">
+            <button id="close-menu-btn" class="absolute top-6 right-6 text-3xl text-slate-400 hover:text-white" aria-label="Close Menu">
                 <i class="fas fa-times"></i>
             </button>
             <a href="#experience" class="mobile-link hover:text-cyan-400">Experience</a>
@@ -85,341 +125,344 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="hero" class="min-h-screen flex items-center pt-20 relative overflow-hidden">
-        <!-- Background Decor -->
-        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-            <div class="absolute top-20 left-10 w-72 h-72 bg-indigo-600 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-            <div class="absolute top-20 right-10 w-72 h-72 bg-cyan-600 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
-            <div class="absolute -bottom-8 left-20 w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
-        </div>
+    <!-- Main Content Wrapper for Semantic SEO -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center pt-20 relative overflow-hidden">
+            <!-- Background Decor -->
+            <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+                <div class="absolute top-20 left-10 w-72 h-72 bg-indigo-600 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+                <div class="absolute top-20 right-10 w-72 h-72 bg-cyan-600 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+                <div class="absolute -bottom-8 left-20 w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+            </div>
 
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col-reverse md:flex-row items-center gap-12">
-                <div class="w-full md:w-3/5 lg:w-2/3 reveal-left">
-                    <p class="font-mono text-cyan-400 mb-4">Hello, I am</p>
-                    <h1 class="text-5xl lg:text-7xl font-bold text-slate-100 mb-6 leading-tight">
-                        Rabi Ibrahim.
-                        <span class="block text-slate-400 text-3xl lg:text-5xl mt-2">Senior Staff Engineer.</span>
-                    </h1>
-                    <p class="text-lg text-slate-400 mb-8 max-w-2xl leading-relaxed">
-                        I bridge the gap between <span class="text-indigo-400 font-semibold">academic theory</span> and <span class="text-cyan-400 font-semibold">real-world high-scale production systems</span>. Currently driving Backend R&D at Kinaxis. Formerly Amazon.
-                    </p>
-                    
-                    <div class="flex flex-wrap gap-4">
-                        <a href="https://linkedin.com/in/rabiibrahim" target="_blank" class="px-8 py-3 bg-cyan-500 text-slate-950 font-bold rounded hover:bg-cyan-400 transition-all flex items-center gap-2">
-                            <i class="fab fa-linkedin"></i> LinkedIn
-                        </a>
-                        <a href="https://www.youtube.com/@RabiBytes" target="_blank" class="px-8 py-3 border border-slate-600 text-slate-100 rounded hover:border-red-500 hover:text-red-500 transition-all flex items-center gap-2 group">
-                            <i class="fab fa-youtube text-red-500 group-hover:text-red-500"></i> RabiBytes
-                        </a>
-                        <a href="https://github.com/rabiibrahim" target="_blank" class="px-6 py-3 text-slate-400 hover:text-white transition-colors">
-                            <i class="fab fa-github text-2xl"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Abstract Code Visual -->
-                <div class="w-full md:w-2/5 lg:w-1/3 flex justify-center reveal-right">
-                    <div class="relative bg-slate-900 border border-slate-800 p-6 rounded-lg shadow-2xl font-mono text-sm leading-6 text-slate-400 w-full max-w-md rotate-3 hover:rotate-0 transition-transform duration-500">
-                        <div class="flex gap-2 mb-4">
-                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="flex flex-col-reverse md:flex-row items-center gap-12">
+                    <div class="w-full md:w-3/5 lg:w-2/3 reveal-left">
+                        <p class="font-mono text-cyan-400 mb-4">Hello, I am</p>
+                        <h1 class="text-5xl lg:text-7xl font-bold text-slate-100 mb-6 leading-tight">
+                            Rabi Ibrahim.
+                            <span class="block text-slate-400 text-3xl lg:text-5xl mt-2">Senior Staff Engineer.</span>
+                        </h1>
+                        <p class="text-lg text-slate-400 mb-8 max-w-2xl leading-relaxed">
+                            I bridge the gap between <span class="text-indigo-400 font-semibold">academic theory</span> and <span class="text-cyan-400 font-semibold">real-world high-scale production systems</span>. Currently driving Backend R&D at Kinaxis. Formerly Amazon.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://linkedin.com/in/rabiibrahim" target="_blank" rel="noopener noreferrer" class="px-8 py-3 bg-cyan-500 text-slate-950 font-bold rounded hover:bg-cyan-400 transition-all flex items-center gap-2">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                            <a href="https://www.youtube.com/@RabiBytes" target="_blank" rel="noopener noreferrer" class="px-8 py-3 border border-slate-600 text-slate-100 rounded hover:border-red-500 hover:text-red-500 transition-all flex items-center gap-2 group">
+                                <i class="fab fa-youtube text-red-500 group-hover:text-red-500"></i> RabiBytes
+                            </a>
+                            <a href="https://github.com/rabiibrahim" target="_blank" rel="noopener noreferrer" class="px-6 py-3 text-slate-400 hover:text-white transition-colors" aria-label="GitHub Profile">
+                                <i class="fab fa-github text-2xl"></i>
+                            </a>
                         </div>
-                        <div>
-                            <span class="text-purple-400">class</span> <span class="text-yellow-300">Engineer</span> {<br>
-                            &nbsp;&nbsp;<span class="text-purple-400">constructor</span>() {<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-red-400">this</span>.role = <span class="text-green-400">"Senior Staff"</span>;<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-red-400">this</span>.mission = <span class="text-green-400">"Scale"</span>;<br>
-                            &nbsp;&nbsp;}<br><br>
-                            &nbsp;&nbsp;<span class="text-blue-400">solve</span>(<span class="text-orange-300">complexProblem</span>) {<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">return</span> <span class="text-blue-400">simplify</span>(complexProblem);<br>
-                            &nbsp;&nbsp;}<br>
-                            }
+                    </div>
+                    
+                    <!-- Abstract Code Visual -->
+                    <div class="w-full md:w-2/5 lg:w-1/3 flex justify-center reveal-right">
+                        <div class="relative bg-slate-900 border border-slate-800 p-6 rounded-lg shadow-2xl font-mono text-sm leading-6 text-slate-400 w-full max-w-md rotate-3 hover:rotate-0 transition-transform duration-500">
+                            <div class="flex gap-2 mb-4">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            </div>
+                            <div>
+                                <span class="text-purple-400">class</span> <span class="text-yellow-300">Engineer</span> {<br>
+                                &nbsp;&nbsp;<span class="text-purple-400">constructor</span>() {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-red-400">this</span>.role = <span class="text-green-400">"Senior Staff"</span>;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-red-400">this</span>.mission = <span class="text-green-400">"Scale"</span>;<br>
+                                &nbsp;&nbsp;}<br><br>
+                                &nbsp;&nbsp;<span class="text-blue-400">solve</span>(<span class="text-orange-300">complexProblem</span>) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">return</span> <span class="text-blue-400">simplify</span>(complexProblem);<br>
+                                &nbsp;&nbsp;}<br>
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-24 bg-slate-900">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-slate-100 mb-12 flex items-center gap-3 reveal-up">
-                <span class="text-cyan-400">01.</span> Professional Experience
-                <span class="block h-px bg-slate-700 flex-grow ml-4"></span>
-            </h2>
+        <!-- Experience Section -->
+        <section id="experience" class="py-24 bg-slate-900">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-slate-100 mb-12 flex items-center gap-3 reveal-up">
+                    <span class="text-cyan-400">01.</span> Professional Experience
+                    <span class="block h-px bg-slate-700 flex-grow ml-4"></span>
+                </h2>
 
-            <div class="relative border-l-2 border-slate-700 ml-4 md:ml-6 space-y-12">
-                
-                <!-- Kinaxis -->
-                <div class="relative pl-8 md:pl-12 reveal-up group">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-900 border-2 border-cyan-400 group-hover:bg-cyan-400 transition-colors"></div>
-                    <div class="mb-2">
-                        <h3 class="text-xl md:text-2xl font-bold text-slate-100">Senior Staff Engineer</h3>
-                        <div class="flex flex-col md:flex-row md:items-center text-slate-400 font-mono text-sm mt-1">
-                            <span class="text-cyan-400">Kinaxis</span>
-                            <span class="hidden md:inline mx-2">•</span>
-                            <span>June 2024 - Present</span>
+                <div class="relative border-l-2 border-slate-700 ml-4 md:ml-6 space-y-12">
+                    
+                    <!-- Kinaxis -->
+                    <div class="relative pl-8 md:pl-12 reveal-up group">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-900 border-2 border-cyan-400 group-hover:bg-cyan-400 transition-colors"></div>
+                        <div class="mb-2">
+                            <h3 class="text-xl md:text-2xl font-bold text-slate-100">Senior Staff Engineer</h3>
+                            <div class="flex flex-col md:flex-row md:items-center text-slate-400 font-mono text-sm mt-1">
+                                <span class="text-cyan-400">Kinaxis</span>
+                                <span class="hidden md:inline mx-2">•</span>
+                                <span>June 2024 - Present</span>
+                            </div>
                         </div>
+                        <ul class="list-disc list-outside ml-4 space-y-2 text-slate-400 marker:text-cyan-400">
+                            <li>Lead backend R&D architecture for scalable, cloud-native microservices.</li>
+                            <li>Designed migration strategy for legacy monolith to containerized microservices using Kubernetes, Docker, Go, and C++.</li>
+                            <li>Designed an optimizer framework achieving a <span class="text-white">13% reduction</span> in query execution time.</li>
+                            <li>Mentored junior developers, improving team productivity by 20%.</li>
+                        </ul>
                     </div>
-                    <ul class="list-disc list-outside ml-4 space-y-2 text-slate-400 marker:text-cyan-400">
-                        <li>Lead backend R&D architecture for scalable, cloud-native microservices.</li>
-                        <li>Designed migration strategy for legacy monolith to containerized microservices using Kubernetes, Docker, Go, and C++.</li>
-                        <li>Designed an optimizer framework achieving a <span class="text-white">13% reduction</span> in query execution time.</li>
-                        <li>Mentored junior developers, improving team productivity by 20%.</li>
-                    </ul>
-                </div>
 
-                <!-- Amazon -->
-                <div class="relative pl-8 md:pl-12 reveal-up group">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-900 border-2 border-indigo-400 group-hover:bg-indigo-400 transition-colors"></div>
-                    <div class="mb-2">
-                        <h3 class="text-xl md:text-2xl font-bold text-slate-100">Software Development Engineer</h3>
-                        <div class="flex flex-col md:flex-row md:items-center text-slate-400 font-mono text-sm mt-1">
-                            <span class="text-indigo-400">Amazon</span>
-                            <span class="hidden md:inline mx-2">•</span>
-                            <span>Aug 2016 - June 2024</span>
+                    <!-- Amazon -->
+                    <div class="relative pl-8 md:pl-12 reveal-up group">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-900 border-2 border-indigo-400 group-hover:bg-indigo-400 transition-colors"></div>
+                        <div class="mb-2">
+                            <h3 class="text-xl md:text-2xl font-bold text-slate-100">Software Development Engineer</h3>
+                            <div class="flex flex-col md:flex-row md:items-center text-slate-400 font-mono text-sm mt-1">
+                                <span class="text-indigo-400">Amazon</span>
+                                <span class="hidden md:inline mx-2">•</span>
+                                <span>Aug 2016 - June 2024</span>
+                            </div>
                         </div>
+                        <p class="text-sm italic text-slate-500 mb-2">Focus: Payment Information Security</p>
+                        <ul class="list-disc list-outside ml-4 space-y-2 text-slate-400 marker:text-indigo-400">
+                            <li>Designed and delivered large-scale distributed systems focusing on payments and security solutions.</li>
+                            <li>Employed microservices architecture on AWS (Java, Python, Kotlin).</li>
+                            <li>Ensured compliance with Amazon Payments' information security framework.</li>
+                            <li>Played a pivotal role in influencing technical decisions and driving innovation.</li>
+                        </ul>
                     </div>
-                    <p class="text-sm italic text-slate-500 mb-2">Focus: Payment Information Security</p>
-                    <ul class="list-disc list-outside ml-4 space-y-2 text-slate-400 marker:text-indigo-400">
-                        <li>Designed and delivered large-scale distributed systems focusing on payments and security solutions.</li>
-                        <li>Employed microservices architecture on AWS (Java, Python, Kotlin).</li>
-                        <li>Ensured compliance with Amazon Payments' information security framework.</li>
-                        <li>Played a pivotal role in influencing technical decisions and driving innovation.</li>
-                    </ul>
-                </div>
 
-                <!-- Blulogix -->
-                <div class="relative pl-8 md:pl-12 reveal-up group">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-900 border-2 border-slate-500 group-hover:bg-slate-500 transition-colors"></div>
-                    <div class="mb-2">
-                        <h3 class="text-xl md:text-2xl font-bold text-slate-100">Software Engineer</h3>
-                        <div class="flex flex-col md:flex-row md:items-center text-slate-400 font-mono text-sm mt-1">
-                            <span class="text-slate-300">Blulogix</span>
-                            <span class="hidden md:inline mx-2">•</span>
-                            <span>June 2014 - July 2016</span>
+                    <!-- Blulogix -->
+                    <div class="relative pl-8 md:pl-12 reveal-up group">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-900 border-2 border-slate-500 group-hover:bg-slate-500 transition-colors"></div>
+                        <div class="mb-2">
+                            <h3 class="text-xl md:text-2xl font-bold text-slate-100">Software Engineer</h3>
+                            <div class="flex flex-col md:flex-row md:items-center text-slate-400 font-mono text-sm mt-1">
+                                <span class="text-slate-300">Blulogix</span>
+                                <span class="hidden md:inline mx-2">•</span>
+                                <span>June 2014 - July 2016</span>
+                            </div>
                         </div>
+                        <ul class="list-disc list-outside ml-4 space-y-2 text-slate-400 marker:text-slate-500">
+                            <li>Developed a SaaS billing platform for telecom providers using Java, Spring, Hibernate, and Solr.</li>
+                            <li>Contributed to the Minimum Viable Product (MVP) and facilitated seamless integration.</li>
+                            <li>Demonstrated technical leadership in resolving ambiguous issues in a fast-paced startup environment.</li>
+                        </ul>
                     </div>
-                    <ul class="list-disc list-outside ml-4 space-y-2 text-slate-400 marker:text-slate-500">
-                        <li>Developed a SaaS billing platform for telecom providers using Java, Spring, Hibernate, and Solr.</li>
-                        <li>Contributed to the Minimum Viable Product (MVP) and facilitated seamless integration.</li>
-                        <li>Demonstrated technical leadership in resolving ambiguous issues in a fast-paced startup environment.</li>
-                    </ul>
-                </div>
 
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- RabiBytes Creator Section -->
-    <section id="rabibytes" class="py-24 bg-slate-900 relative overflow-hidden">
-        <!-- Background Gradients to match banner vibe -->
-        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-rabi-blue/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-rabi-green/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+        <!-- RabiBytes Creator Section -->
+        <section id="rabibytes" class="py-24 bg-slate-900 relative overflow-hidden">
+            <!-- Background Gradients to match banner vibe -->
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-rabi-blue/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-rabi-green/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
 
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center gap-16">
-                
-                <!-- Text Content -->
-                <div class="lg:w-1/2 reveal-left">
-                    <div class="flex items-center gap-3 mb-6">
-                        <span class="w-12 h-1 bg-gradient-to-r from-rabi-blue to-rabi-green rounded-full"></span>
-                        <span class="text-rabi-blue font-mono font-bold tracking-wider uppercase text-sm">Content Creator</span>
-                    </div>
-
-                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                        Small Bytes. <br/>
-                        <span class="text-slate-300">Big Knowledge.</span>
-                    </h2>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="flex flex-col lg:flex-row items-center gap-16">
                     
-                    <p class="text-slate-400 text-lg leading-relaxed mb-8 border-l-4 border-rabi-blue/30 pl-6">
-                        Bridging the gap between academic theory and high-scale production systems. I dedicate 20% of my time to empowering the global tech community—with a special focus on the Arabic region—by simplifying complex distributed system concepts into actionable insights.
-                    </p>
-                    
-                    <div class="flex flex-wrap gap-4">
-                        <a href="https://www.youtube.com/@RabiBytes?sub_confirmation=1" target="_blank" class="px-8 py-4 bg-[#FF0000] text-white font-bold rounded-lg hover:bg-[#CC0000] transition-all shadow-lg shadow-red-900/20 flex items-center gap-3 group">
-                            <i class="fab fa-youtube text-xl group-hover:scale-110 transition-transform"></i>
-                            <span>Subscribe Channel</span>
-                        </a>
-                        <a href="https://rabibytes.github.io/" target="_blank" class="px-8 py-4 bg-slate-800 border border-slate-700 text-slate-300 font-bold rounded-lg hover:bg-slate-700 hover:text-white transition-all flex items-center gap-3">
-                            <i class="fas fa-rss text-rabi-green"></i>
-                            <span>Read Blog</span>
-                        </a>
-                    </div>
+                    <!-- Text Content -->
+                    <div class="lg:w-1/2 reveal-left">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="w-12 h-1 bg-gradient-to-r from-rabi-blue to-rabi-green rounded-full"></span>
+                            <span class="text-rabi-blue font-mono font-bold tracking-wider uppercase text-sm">Content Creator</span>
+                        </div>
 
-                    <!-- Tech Tags -->
-                    <div class="mt-10 flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-slate-800 text-slate-400 text-xs rounded-full border border-slate-700">#SystemDesign</span>
-                        <span class="px-3 py-1 bg-slate-800 text-slate-400 text-xs rounded-full border border-slate-700">#DistributedSystems</span>
-                        <span class="px-3 py-1 bg-slate-800 text-slate-400 text-xs rounded-full border border-slate-700">#CareerGrowth</span>
+                        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                            Small Bytes. <br/>
+                            <span class="text-slate-300">Big Knowledge.</span>
+                        </h2>
+                        
+                        <p class="text-slate-400 text-lg leading-relaxed mb-8 border-l-4 border-rabi-blue/30 pl-6">
+                            Bridging the gap between academic theory and high-scale production systems. I dedicate 20% of my time to empowering the global tech community—with a special focus on the Arabic region—by simplifying complex distributed system concepts into actionable insights.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://www.youtube.com/@RabiBytes?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-[#FF0000] text-white font-bold rounded-lg hover:bg-[#CC0000] transition-all shadow-lg shadow-red-900/20 flex items-center gap-3 group">
+                                <i class="fab fa-youtube text-xl group-hover:scale-110 transition-transform"></i>
+                                <span>Subscribe Channel</span>
+                            </a>
+                            <a href="https://rabibytes.github.io/" target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-slate-800 border border-slate-700 text-slate-300 font-bold rounded-lg hover:bg-slate-700 hover:text-white transition-all flex items-center gap-3">
+                                <i class="fas fa-rss text-rabi-green"></i>
+                                <span>Read Blog</span>
+                            </a>
+                        </div>
+
+                        <!-- Tech Tags -->
+                        <div class="mt-10 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-slate-800 text-slate-400 text-xs rounded-full border border-slate-700">#SystemDesign</span>
+                            <span class="px-3 py-1 bg-slate-800 text-slate-400 text-xs rounded-full border border-slate-700">#DistributedSystems</span>
+                            <span class="px-3 py-1 bg-slate-800 text-slate-400 text-xs rounded-full border border-slate-700">#CareerGrowth</span>
+                        </div>
                     </div>
-                </div>
-                
-                <!-- Video Content -->
-                <div class="lg:w-1/2 w-full reveal-right">
-                    <div class="relative rounded-2xl overflow-hidden border border-slate-700/50 shadow-2xl bg-slate-950 group">
-                        <!-- Thumbnail and Link -->
-                        <a href="https://www.youtube.com/watch?v=AtwFyrwOtwM" target="_blank" class="block relative pb-[56.25%] h-0 bg-slate-900 group cursor-pointer overflow-hidden">
-                            <!-- Thumbnail Image -->
-                            <img 
-                                src="https://img.youtube.com/vi/AtwFyrwOtwM/maxresdefault.jpg" 
-                                alt="RabiBytes Video Thumbnail" 
-                                class="absolute top-0 left-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
-                            >
+                    
+                    <!-- Video Content -->
+                    <div class="lg:w-1/2 w-full reveal-right">
+                        <div class="relative rounded-2xl overflow-hidden border border-slate-700/50 shadow-2xl bg-slate-950 group">
+                            <!-- Thumbnail and Link -->
+                            <a href="https://www.youtube.com/watch?v=AtwFyrwOtwM" target="_blank" rel="noopener noreferrer" class="block relative pb-[56.25%] h-0 bg-slate-900 group cursor-pointer overflow-hidden" aria-label="Watch RabiBytes Intro Video">
+                                <!-- Thumbnail Image -->
+                                <img 
+                                    src="https://img.youtube.com/vi/AtwFyrwOtwM/maxresdefault.jpg" 
+                                    alt="RabiBytes Video Thumbnail showing Rabi Ibrahim" 
+                                    class="absolute top-0 left-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                                >
+                                
+                                <!-- Play Button Overlay -->
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="w-20 h-20 bg-[#FF0000] rounded-full flex items-center justify-center shadow-lg shadow-red-900/50 group-hover:scale-110 transition-transform duration-300">
+                                        <i class="fas fa-play text-white text-3xl ml-2"></i>
+                                    </div>
+                                </div>
+                                
+                                <!-- Overlay Gradient -->
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
+                            </a>
                             
-                            <!-- Play Button Overlay -->
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <div class="w-20 h-20 bg-[#FF0000] rounded-full flex items-center justify-center shadow-lg shadow-red-900/50 group-hover:scale-110 transition-transform duration-300">
-                                    <i class="fas fa-play text-white text-3xl ml-2"></i>
+                            <!-- Video Footer info -->
+                            <div class="bg-slate-900 p-6 border-t border-slate-800 flex justify-between items-center">
+                                <div class="flex flex-col">
+                                    <h3 class="text-white font-bold text-lg">RabiBytes Intro</h3>
+                                    <p class="text-slate-400 text-sm mt-1">
+                                        Click to watch the full introduction on YouTube.
+                                    </p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="w-2 h-2 rounded-full bg-rabi-green animate-pulse"></div>
+                                    <span class="text-rabi-green text-xs font-mono font-bold uppercase">Featured</span>
                                 </div>
                             </div>
-                            
-                            <!-- Overlay Gradient -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
-                        </a>
-                        
-                        <!-- Video Footer info -->
-                        <div class="bg-slate-900 p-6 border-t border-slate-800 flex justify-between items-center">
-                            <div class="flex flex-col">
-                                <h3 class="text-white font-bold text-lg">RabiBytes Intro</h3>
-                                <p class="text-slate-400 text-sm mt-1">
-                                    Click to watch the full introduction on YouTube.
-                                </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-slate-100 mb-12 flex items-center gap-3 reveal-up">
+                    <span class="text-cyan-400">02.</span> Technical Arsenal
+                    <span class="block h-px bg-slate-700 flex-grow ml-4"></span>
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Backend & Cloud (80%) -->
+                    <div class="reveal-up">
+                        <h3 class="text-xl font-bold text-indigo-400 mb-6 flex items-center gap-2">
+                            <i class="fas fa-server"></i> Backend & Cloud (Core Focus)
+                        </h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="skill-card">
+                                <i class="fab fa-java text-orange-500 mb-2 text-2xl"></i>
+                                <span class="font-mono">Java / Kotlin</span>
                             </div>
-                            <div class="flex items-center gap-2">
-                                <div class="w-2 h-2 rounded-full bg-rabi-green animate-pulse"></div>
-                                <span class="text-rabi-green text-xs font-mono font-bold uppercase">Featured</span>
+                            <div class="skill-card">
+                                <i class="fab fa-aws text-yellow-500 mb-2 text-2xl"></i>
+                                <span class="font-mono">AWS</span>
+                            </div>
+                            <div class="skill-card">
+                                <i class="fab fa-golang text-cyan-500 mb-2 text-2xl"></i>
+                                <span class="font-mono">Go / C++</span>
+                            </div>
+                            <div class="skill-card">
+                                <i class="fas fa-database text-blue-400 mb-2 text-2xl"></i>
+                                <span class="font-mono">SQL / NoSQL</span>
+                            </div>
+                            <div class="skill-card">
+                                <i class="fab fa-python text-blue-300 mb-2 text-2xl"></i>
+                                <span class="font-mono">Python</span>
+                            </div>
+                            <div class="skill-card">
+                                <i class="fas fa-microchip text-purple-400 mb-2 text-2xl"></i>
+                                <span class="font-mono">Microservices</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools & Frontend (20%) -->
+                    <div class="reveal-up">
+                        <h3 class="text-xl font-bold text-cyan-400 mb-6 flex items-center gap-2">
+                            <i class="fas fa-tools"></i> Tools & Frontend
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="bg-slate-900 p-4 rounded border border-slate-800 flex items-center justify-between">
+                                <span class="font-mono text-slate-300">CI/CD (Jenkins, GitLab)</span>
+                                <div class="w-32 h-2 bg-slate-700 rounded-full overflow-hidden" aria-hidden="true">
+                                    <div class="progress-bar bg-cyan-500 h-full w-0 transition-all duration-1000 ease-out" data-width="90%"></div>
+                                </div>
+                            </div>
+                            <div class="bg-slate-900 p-4 rounded border border-slate-800 flex items-center justify-between">
+                                <span class="font-mono text-slate-300">Docker / Containers</span>
+                                <div class="w-32 h-2 bg-slate-700 rounded-full overflow-hidden" aria-hidden="true">
+                                    <div class="progress-bar bg-cyan-500 h-full w-0 transition-all duration-1000 ease-out" data-width="85%"></div>
+                                </div>
+                            </div>
+                            <div class="bg-slate-900 p-4 rounded border border-slate-800 flex items-center justify-between">
+                                <span class="font-mono text-slate-300">React / NodeJs</span>
+                                <div class="w-32 h-2 bg-slate-700 rounded-full overflow-hidden" aria-hidden="true">
+                                    <div class="progress-bar bg-indigo-500 h-full w-0 transition-all duration-1000 ease-out" data-width="60%"></div>
+                                </div>
+                            </div>
+                            <div class="bg-slate-900 p-4 rounded border border-slate-800 flex items-center justify-between">
+                                <span class="font-mono text-slate-300">Git / Jira</span>
+                                <div class="w-32 h-2 bg-slate-700 rounded-full overflow-hidden" aria-hidden="true">
+                                    <div class="progress-bar bg-cyan-500 h-full w-0 transition-all duration-1000 ease-out" data-width="95%"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-24">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-slate-100 mb-12 flex items-center gap-3 reveal-up">
-                <span class="text-cyan-400">02.</span> Technical Arsenal
-                <span class="block h-px bg-slate-700 flex-grow ml-4"></span>
-            </h2>
-
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Backend & Cloud (80%) -->
-                <div class="reveal-up">
-                    <h3 class="text-xl font-bold text-indigo-400 mb-6 flex items-center gap-2">
-                        <i class="fas fa-server"></i> Backend & Cloud (Core Focus)
-                    </h3>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="skill-card">
-                            <i class="fab fa-java text-orange-500 mb-2 text-2xl"></i>
-                            <span class="font-mono">Java / Kotlin</span>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fab fa-aws text-yellow-500 mb-2 text-2xl"></i>
-                            <span class="font-mono">AWS</span>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fab fa-golang text-cyan-500 mb-2 text-2xl"></i>
-                            <span class="font-mono">Go / C++</span>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fas fa-database text-blue-400 mb-2 text-2xl"></i>
-                            <span class="font-mono">SQL / NoSQL</span>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fab fa-python text-blue-300 mb-2 text-2xl"></i>
-                            <span class="font-mono">Python</span>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fas fa-microchip text-purple-400 mb-2 text-2xl"></i>
-                            <span class="font-mono">Microservices</span>
+        <!-- Education & Certs -->
+        <section id="education" class="py-24 bg-slate-900">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-slate-100 mb-12 flex items-center gap-3 reveal-up">
+                    <span class="text-cyan-400">03.</span> Education & Certifications
+                    <span class="block h-px bg-slate-700 flex-grow ml-4"></span>
+                </h2>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Degree -->
+                    <div class="col-span-1 md:col-span-3 bg-slate-800/50 p-6 rounded-lg border border-slate-700 reveal-up">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Bachelor of Software Engineering</h3>
+                                <p class="text-cyan-400 mt-1">The Hashemite University</p>
+                            </div>
+                            <span class="text-slate-500 font-mono text-sm">2010 - 2014</span>
                         </div>
                     </div>
-                </div>
 
-                <!-- Tools & Frontend (20%) -->
-                <div class="reveal-up">
-                    <h3 class="text-xl font-bold text-cyan-400 mb-6 flex items-center gap-2">
-                        <i class="fas fa-tools"></i> Tools & Frontend
-                    </h3>
-                    <div class="space-y-4">
-                        <div class="bg-slate-900 p-4 rounded border border-slate-800 flex items-center justify-between">
-                            <span class="font-mono text-slate-300">CI/CD (Jenkins, GitLab)</span>
-                            <div class="w-32 h-2 bg-slate-700 rounded-full overflow-hidden">
-                                <div class="bg-cyan-500 h-full w-[90%]"></div>
-                            </div>
-                        </div>
-                        <div class="bg-slate-900 p-4 rounded border border-slate-800 flex items-center justify-between">
-                            <span class="font-mono text-slate-300">Docker / Containers</span>
-                            <div class="w-32 h-2 bg-slate-700 rounded-full overflow-hidden">
-                                <div class="bg-cyan-500 h-full w-[85%]"></div>
-                            </div>
-                        </div>
-                        <div class="bg-slate-900 p-4 rounded border border-slate-800 flex items-center justify-between">
-                            <span class="font-mono text-slate-300">React / NodeJs</span>
-                            <div class="w-32 h-2 bg-slate-700 rounded-full overflow-hidden">
-                                <div class="bg-indigo-500 h-full w-[60%]"></div>
-                            </div>
-                        </div>
-                        <div class="bg-slate-900 p-4 rounded border border-slate-800 flex items-center justify-between">
-                            <span class="font-mono text-slate-300">Git / Jira</span>
-                            <div class="w-32 h-2 bg-slate-700 rounded-full overflow-hidden">
-                                <div class="bg-cyan-500 h-full w-[95%]"></div>
-                            </div>
-                        </div>
+                    <!-- Certs -->
+                    <div class="bg-slate-950 p-6 rounded-lg border border-slate-800 hover:border-cyan-400/50 transition-colors reveal-up">
+                        <i class="fas fa-shield-halved text-cyan-400 text-3xl mb-4"></i>
+                        <h4 class="font-bold text-slate-200">Certified Ethical Hacker v9</h4>
+                        <p class="text-sm text-slate-500 mt-2">Jan 2018</p>
+                    </div>
+
+                    <div class="bg-slate-950 p-6 rounded-lg border border-slate-800 hover:border-cyan-400/50 transition-colors reveal-up">
+                        <i class="fas fa-cubes text-cyan-400 text-3xl mb-4"></i>
+                        <h4 class="font-bold text-slate-200">BlockChain Dev Bootcamp</h4>
+                        <p class="text-sm text-slate-500 mt-2">Aug 2018</p>
+                    </div>
+
+                    <div class="bg-slate-950 p-6 rounded-lg border border-slate-800 hover:border-cyan-400/50 transition-colors reveal-up">
+                        <i class="fas fa-lock text-cyan-400 text-3xl mb-4"></i>
+                        <h4 class="font-bold text-slate-200">Security Certifier</h4>
+                        <p class="text-sm text-slate-500 mt-2">Amazon Internal</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Education & Certs -->
-    <section id="education" class="py-24 bg-slate-900">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-slate-100 mb-12 flex items-center gap-3 reveal-up">
-                <span class="text-cyan-400">03.</span> Education & Certifications
-                <span class="block h-px bg-slate-700 flex-grow ml-4"></span>
-            </h2>
-            
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Degree -->
-                <div class="col-span-1 md:col-span-3 bg-slate-800/50 p-6 rounded-lg border border-slate-700 reveal-up">
-                    <div class="flex items-start justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold text-white">Bachelor of Software Engineering</h3>
-                            <p class="text-cyan-400 mt-1">The Hashemite University</p>
-                        </div>
-                        <span class="text-slate-500 font-mono text-sm">2010 - 2014</span>
-                    </div>
-                </div>
-
-                <!-- Certs -->
-                <div class="bg-slate-950 p-6 rounded-lg border border-slate-800 hover:border-cyan-400/50 transition-colors reveal-up">
-                    <i class="fas fa-shield-halved text-cyan-400 text-3xl mb-4"></i>
-                    <h4 class="font-bold text-slate-200">Certified Ethical Hacker v9</h4>
-                    <p class="text-sm text-slate-500 mt-2">Jan 2018</p>
-                </div>
-
-                <div class="bg-slate-950 p-6 rounded-lg border border-slate-800 hover:border-cyan-400/50 transition-colors reveal-up">
-                    <i class="fas fa-cubes text-cyan-400 text-3xl mb-4"></i>
-                    <h4 class="font-bold text-slate-200">BlockChain Dev Bootcamp</h4>
-                    <p class="text-sm text-slate-500 mt-2">Aug 2018</p>
-                </div>
-
-                <div class="bg-slate-950 p-6 rounded-lg border border-slate-800 hover:border-cyan-400/50 transition-colors reveal-up">
-                    <i class="fas fa-lock text-cyan-400 text-3xl mb-4"></i>
-                    <h4 class="font-bold text-slate-200">Security Certifier</h4>
-                    <p class="text-sm text-slate-500 mt-2">Amazon Internal</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer id="contact" class="py-20 bg-slate-950 border-t border-slate-900 relative overflow-hidden">
@@ -439,14 +482,14 @@
                     <i class="fas fa-envelope"></i> Say Hello
                 </a>
                 <div class="flex gap-6">
-                    <a href="https://linkedin.com/in/rabiibrahim" target="_blank" class="p-4 bg-slate-900 border border-slate-800 rounded-lg text-slate-400 hover:text-white hover:border-cyan-500/50 transition-all group">
-                        <i class="fab fa-linkedin text-2xl group-hover:scale-110 transition-transform"></i>
+                    <a href="https://linkedin.com/in/rabiibrahim" target="_blank" rel="noopener noreferrer" class="p-4 bg-slate-900 border border-slate-800 rounded-lg text-slate-400 hover:text-[#0077b5] hover:border-[#0077b5]/50 hover:shadow-[0_0_20px_rgba(0,119,181,0.2)] transition-all duration-300 group" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin text-2xl group-hover:scale-110 transition-transform duration-300"></i>
                     </a>
-                    <a href="https://github.com/rabiibrahim" target="_blank" class="p-4 bg-slate-900 border border-slate-800 rounded-lg text-slate-400 hover:text-white hover:border-cyan-500/50 transition-all group">
-                        <i class="fab fa-github text-2xl group-hover:scale-110 transition-transform"></i>
+                    <a href="https://github.com/rabiibrahim" target="_blank" rel="noopener noreferrer" class="p-4 bg-slate-900 border border-slate-800 rounded-lg text-slate-400 hover:text-white hover:border-white/50 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 group" aria-label="GitHub">
+                        <i class="fab fa-github text-2xl group-hover:scale-110 transition-transform duration-300"></i>
                     </a>
-                    <a href="https://www.youtube.com/@RabiBytes" target="_blank" class="p-4 bg-slate-900 border border-slate-800 rounded-lg text-slate-400 hover:text-red-500 hover:border-red-500/50 transition-all group">
-                        <i class="fab fa-youtube text-2xl group-hover:scale-110 transition-transform"></i>
+                    <a href="https://www.youtube.com/@RabiBytes" target="_blank" rel="noopener noreferrer" class="p-4 bg-slate-900 border border-slate-800 rounded-lg text-slate-400 hover:text-[#FF0000] hover:border-[#FF0000]/50 hover:shadow-[0_0_20px_rgba(255,0,0,0.2)] transition-all duration-300 group" aria-label="YouTube">
+                        <i class="fab fa-youtube text-2xl group-hover:scale-110 transition-transform duration-300"></i>
                     </a>
                 </div>
             </div>
