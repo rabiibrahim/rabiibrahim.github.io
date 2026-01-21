@@ -5,7 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuBtn = document.getElementById('mobile-menu-btn');
     const closeBtn = document.getElementById('close-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    
+    // Note: We don't need to attach click listeners to .mobile-link here anymore
+    // because the smooth scroll handler below will handle closing the menu.
+
     function toggleMenu() {
         const isClosed = mobileMenu.classList.contains('translate-x-full');
         if (isClosed) {
@@ -15,12 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    if (menuBtn && closeBtn && mobileMenu) {
-        menuBtn.addEventListener('click', toggleMenu);
-        closeBtn.addEventListener('click', toggleMenu);
-    }
+    menuBtn.addEventListener('click', toggleMenu);
+    closeBtn.addEventListener('click', toggleMenu);
 
-    // 2. Smooth Scroll with Offset
+    // 2. Smooth Scroll with Offset (The Fix for Links)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -31,7 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetElement = document.querySelector(targetId);
             
             if (targetElement) {
-                // Determine offset based on screen size
+                // Determine offset based on screen size (header height)
+                // Desktop header is approx 80px, Mobile is smaller but safe to use 80px
                 const headerOffset = 90; 
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.scrollY - headerOffset;
@@ -42,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 // Close mobile menu if open
-                if (mobileMenu && !mobileMenu.classList.contains('translate-x-full')) {
+                if (!mobileMenu.classList.contains('translate-x-full')) {
                     mobileMenu.classList.add('translate-x-full');
                 }
             }
@@ -52,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Navbar Styles on Scroll
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
-        if (!navbar) return;
         if (window.scrollY > 50) {
             navbar.classList.add('nav-scrolled');
             navbar.classList.remove('py-4');
@@ -64,19 +64,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 4. Scroll Reveal Animation
+    // 4. Scroll Reveal Animation (Intersection Observer)
     const revealElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
 
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('reveal-active');
-                observer.unobserve(entry.target);
+                observer.unobserve(entry.target); // Only animate once
             }
         });
     }, {
         root: null,
-        threshold: 0.15,
+        threshold: 0.15, // Trigger when 15% of element is visible
         rootMargin: "0px"
     });
 
@@ -88,26 +88,23 @@ document.addEventListener('DOMContentLoaded', () => {
         yearSpan.textContent = new Date().getFullYear();
     }
 
-    // 6. Back to Top Button - Re-implemented
+    // 6. Back to Top Button
     const backToTopBtn = document.getElementById('back-to-top');
     
-    if (backToTopBtn) {
-        window.addEventListener('scroll', () => {
-            // Check if user has scrolled down 200px
-            if (window.scrollY > 200) {
-                backToTopBtn.classList.add('show');
-            } else {
-                backToTopBtn.classList.remove('show');
-            }
-        });
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) { // Using 300px threshold
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
 
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
-    }
+    });
 
     // 7. Progress Bar Animation
     const progressBars = document.querySelectorAll('.progress-bar');
